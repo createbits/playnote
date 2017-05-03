@@ -8,7 +8,7 @@
   "scripts": {
     "test": "jest --watch",
     "prepublish": "npm run build-babel",
-    "build-babel": "babel src -d lib && babel src --out-file dist/bundle.js"
+    "build-babel": "babel src -d lib"
   },
   "dependencies": {
     "howler": "^2.0.3",
