@@ -1,1 +1,1 @@
-module.exports = require('./dist/NotePlayer')
+module.exports = require('./lib/NotePlayer')
