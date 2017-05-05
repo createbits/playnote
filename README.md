@@ -1,6 +1,7 @@
 # Playnote
 
 Play your favorite instrument in the browser with support for scales and complex intervals.
+
 It uses [howler.js](https://github.com/goldfire/howler.js) to generate the sounds.
 
 ```js
