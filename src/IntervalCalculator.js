@@ -36,6 +36,8 @@ const calculateHalfSteps = ({ type, distance }) => {
 
   if (type === 'augmented') return calculateHalfSteps({ type: 'perfect', distance }) + 1
 
+  if (type === 'diminished') return calculateHalfSteps({ type: 'perfect', distance }) - 1
+
   if (type === 'perfect') {
     switch (distance) {
       case 4: return 5

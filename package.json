@@ -1,6 +1,6 @@
 {
   "name": "playnote",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Play your favorite instrument in the browser",
   "main": "index.js",
   "author": "Matteo De Micheli",

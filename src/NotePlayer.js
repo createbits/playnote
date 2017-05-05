@@ -1,5 +1,6 @@
 import { rootNoteLetters, getNoteSpriteData } from './NoteSpriteCalculator'
 import { transformNote } from './NoteTransformer'
+import { getIntervals } from './IntervalCalculator'
 import { scale as mapScale } from './ScaleMapper'
 import { Howl } from 'howler'
 
@@ -18,6 +19,8 @@ export const init = async (src) => new Promise(
 )
 
 export const note = transformNote
+
+export const intervals = getIntervals
 
 export const scale = (baseNote, mode) => mapScale(baseNote, mode)
 
