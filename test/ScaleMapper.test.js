@@ -1,6 +1,6 @@
 import { scale } from '../src/ScaleMapper'
 
-test('validly maps default major scale', () => {
+test('default major scale', () => {
   expect(scale('d').getDegrees()).toEqual(
     ['d', 'e', 'fSharp', 'g', 'a', 'b', 'cSharp'],
   )
@@ -16,7 +16,7 @@ test('validly retrieves a single degree', () => {
   expect(scale('cSharp', 'minor').getDegree(3)).toEqual('e')
 })
 
-test('validly maps ionian / major scale', () => {
+test('ionian / major scale', () => {
   expect(scale('c', 'ionian').getDegrees()).toEqual(
     ['c', 'd', 'e', 'f', 'g', 'a', 'b'],
   )
@@ -34,7 +34,7 @@ test('validly maps ionian / major scale', () => {
   )
 })
 
-test('validly maps aeolian / minor scale', () => {
+test('aeolian / minor scale', () => {
   expect(scale('c', 'minor').getDegrees()).toEqual(
     ['c', 'd', 'eFlat', 'f', 'g', 'aFlat', 'bFlat'],
   )
@@ -69,5 +69,53 @@ test('retrieve note relatively to scale', () => {
 
   expect(scale('g', 'major').base(3).notes([1, 4, 8, 11])).toEqual(
     ['g_3', 'c_4', 'g_4', 'c_5'],
+  )
+})
+
+test('gregorian scales', () => {
+  expect(scale('d', 'dorian').base(4).notes([1, 2, 3, 4, 5, 6, 7, 8])).toEqual(
+    ['d_4', 'e_4', 'f_4', 'g_4', 'a_4', 'b_4', 'c_5', 'd_5'],
+  )
+
+  expect(scale('e', 'phrygian').base(4).notes([1, 2, 3, 4, 5, 6, 7, 8])).toEqual(
+    ['e_4', 'f_4', 'g_4', 'a_4', 'b_4', 'c_5', 'd_5', 'e_5'],
+  )
+
+  expect(scale('f', 'lydian').base(4).notes([1, 2, 3, 4, 5, 6, 7, 8])).toEqual(
+    ['f_4', 'g_4', 'a_4', 'b_4', 'c_5', 'd_5', 'e_5', 'f_5'],
+  )
+
+  expect(scale('g', 'mixolydian').base(4).notes([1, 2, 3, 4, 5, 6, 7, 8])).toEqual(
+    ['g_4', 'a_4', 'b_4', 'c_5', 'd_5', 'e_5', 'f_5', 'g_5'],
+  )
+
+  expect(scale('b', 'locrian').base(4).notes([1, 2, 3, 4, 5, 6, 7, 8])).toEqual(
+    ['b_4', 'c_5', 'd_5', 'e_5', 'f_5', 'g_5', 'a_5', 'b_5'],
+  )
+
+  expect(scale('c', 'lydian').base(4).notes([1, 2, 3, 4, 5, 6, 7, 8])).toEqual(
+    ['c_4', 'd_4', 'e_4', 'fSharp_4', 'g_4', 'a_4', 'b_4', 'c_5'],
+  )
+
+  expect(scale('b', 'phrygian').base(4).notes([1, 2, 3, 4, 5, 6, 7, 8])).toEqual(
+    ['b_4', 'c_5', 'd_5', 'e_5', 'fSharp_5', 'g_5', 'a_5', 'b_5'],
+  )
+
+  expect(scale('c', 'mixolydian').base(4).notes([1, 2, 3, 4, 5, 6, 7, 8])).toEqual(
+    ['c_4', 'd_4', 'e_4', 'f_4', 'g_4', 'a_4', 'bFlat_4', 'c_5'],
+  )
+})
+
+test('pentatonic scale', () => {
+  expect(scale('c', 'pentatonic').base(5).notes([1, 2, 3, 4, 5, 6, 7])).toEqual(
+    ['c_5', 'd_5', 'e_5', 'g_5', 'a_5', 'c_6', 'd_6'],
+  )
+
+  expect(scale('e', 'pentatonic').base(3).notes([1, 2, 3, 4, 5, 6, 7])).toEqual(
+    ['e_3', 'fSharp_3', 'gSharp_3', 'b_3', 'cSharp_4', 'e_4', 'fSharp_4'],
+  )
+
+  expect(scale('dFlat', 'pentatonic').base(4).notes([1, 2, 3, 4, 5])).toEqual(
+    ['dFlat_4', 'eFlat_4', 'f_4', 'aFlat_4', 'bFlat_4'],
   )
 })

@@ -92,9 +92,9 @@ const adjustDistanceForSpecialIntervals = (type, distance) => {
  * Calculate intervals by providing a base note and intervals.
  *
  * @param {string} baseNote
- * @param {array} intervals
+ * @param {[*]} intervals
  *
- * @return {array} Array of notes
+ * @return {[*]} Array of notes
  */
 export const getIntervals = (baseNote, intervals) => {
   const [baseNoteLetter, baseNoteOctave] = reverseTransformNote(baseNote)
