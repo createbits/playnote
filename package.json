@@ -1,6 +1,6 @@
 {
   "name": "playnote",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Play your favorite instrument in the browser, with complex note intervals and scales",
   "main": "index.js",
   "author": "Matteo De Micheli",
